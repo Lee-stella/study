@@ -135,9 +135,7 @@ function App() {
     }
   ];
   return (
-    <div className={cx("app")}>
-      <DualListbox primaryData={primaryMock} secondaryData={secondaryMock} />
-    </div>
+    <DualListbox primaryData={primaryMock} secondaryData={secondaryMock} />
   );
 }
 

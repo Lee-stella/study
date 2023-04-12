@@ -15,6 +15,7 @@ import {
   DualListboxDataProps,
   DualListboxProps
 } from "store/Type";
+
 const cx = classNames.bind(styles);
 
 const DualListbox = ({ primaryData, secondaryData }: DualListboxProps) => {
@@ -292,11 +293,12 @@ const DualListbox = ({ primaryData, secondaryData }: DualListboxProps) => {
   };
 
   return (
-    <div className={cx("dual-listbox", "col")}>
-      <label className={cx("dual_listbox_label")}>모집단위</label>
+    <div className={cx("dual-listbox")}>
+      <h1>Dual ListBox</h1>
       <div
-        className={"splitter-layout splitter-layout-vertical "}
-        style={{ height: `622px`, width: `472px` }}
+        className={`splitter-layout splitter-layout-vertical ${cx(
+          "splitter-layout"
+        )}`}
       >
         <SplitterLayout
           vertical
@@ -310,13 +312,10 @@ const DualListbox = ({ primaryData, secondaryData }: DualListboxProps) => {
         >
           <div
             className={`layout-pane layout-pane-primary ${cx(`scroll_box`)}`}
-            style={{
-              height: `100%`
-            }}
           >
             <List data={primaryMock} depth={0} type={TYPE_TO_PRIMARY} />
           </div>
-          <div className={`layout-pane`} style={{ overflowY: `hidden` }}>
+          <div className={`layout-pane`}>
             <div className={cx("dual_listbox_btns")}>
               <p
                 className={cx("arrow_up")}
@@ -330,8 +329,7 @@ const DualListbox = ({ primaryData, secondaryData }: DualListboxProps) => {
             <div
               className={cx("scroll_box")}
               style={{
-                height: `${secondaryPaneSize}px`,
-                overflowY: `hidden`
+                height: `${secondaryPaneSize}px`
               }}
             >
               <List data={secondaryMock} depth={0} type={TYPE_TO_SECONDARY} />
